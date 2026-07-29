@@ -39,7 +39,6 @@ Ademas, debes tener los ints `profit`, `peliculas_arrendadas`, y `clientes_atend
 
 ## Ejemplo
 
-Acá se debe poner un ejemplo de input y el output esperado para dicho input, junto con una breve explicación de por qué se llega a ese output.
 
 #### Input
 ```py
