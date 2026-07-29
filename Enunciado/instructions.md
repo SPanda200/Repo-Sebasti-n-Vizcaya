@@ -9,28 +9,33 @@ Debes crear una clase Cliente. Debe tener las siguientes funciones:
 
 `__init__`, que tome los siguientes parametros:
 
-`nombre`, un string 
+`nombre`, un string.
+
 `preferencia`, una lista que contiene el orden de preferencia de generos de pelicula.
+
 `VIP`, un booleano que determina si es cliente VIP o no.
+
 `demanda`, un int que representa cuantas peliculas quiere arrendar.
 
 También debes crear la clase Blockbuster, que debe tener las variables nombre, stock, capacidad, profit, clientes_atendidos, fila, y orden_atencion. Debe tener las siguientes funciones:
 
 `__init__`, que tome los siguientes parametros:
 
-`nombre`, un string 
-`stock`, una lista que contiene todas las peliculas en stock. Las peliculas vienen en el siguiente formato: [["Titulo1", "Genero", "Valor"],["Titulo2", "Genero", "Valor"]...["TituloN", "Genero", "Valor"]]. Por ejemplo, [["Matrix", "Acción", 1500],["Minions", "Comedia", 2000]]  
+`nombre`, un string.
+
+`stock`, una lista que contiene todas las peliculas en stock. Las peliculas vienen en el siguiente formato: `[["Titulo1", "Genero", "Valor"],["Titulo2", "Genero", "Valor"]...["TituloN", "Genero", "Valor"]]`. Por ejemplo, `[["Matrix", "Acción", 1500],["Minions", "Comedia", 2000]]`.
+
 `capacidad`, un int que determina cuantos clientes puedes atender en un dia. 
 
 Ademas, debes tener los ints `profit`, `peliculas_arrendadas`, y `clientes_atendidos`, que comienzan en 0, y las listas vacias `fila` y `orden_atencion`.
 
-`recibir_cliente(cliente)`, que toma como parametro un objeto Cliente. Si es que queda capacidad en la tienda, debes agregarlo a la fila, e imprimir ("{nombre_cliente} entra al Blockbuster {nombre_tienda}"). En caso contrario, debes imprimir ("{nombre_cliente} se va llorando al no caber adentro de la tienda")
+`recibir_cliente(cliente)`, que toma como parametro un objeto Cliente. Si es que queda capacidad en la tienda, debes agregarlo a la fila, e imprimir `"{nombre_cliente} entra al Blockbuster {nombre_tienda}"`. En caso contrario, debes imprimir `"{nombre_cliente} se va llorando al no caber adentro de la tienda"`
 
-`ordenar_prioridad`, no toma parametros. Debe armar la lista orden_atencion basado en la fila que se armó. Primero debes atender a los clientes VIP según su orden de llegada, y despues a los otros según su orden de llegada. 
+`ordenar_prioridad`, no toma parametros. Debe armar la lista `orden_atencion` basado en la fila que se armó. Primero debes atender a los clientes VIP según su orden de llegada, y despues a los otros según su orden de llegada. 
 
-`generar_venta(cliente)`, toma como parametro un objeto Cliente. Debes buscar peliculas para el cliente de tu stock que cumpla sus preferencias hasta satisfacer su demanda. En caso de que no tengas ninguna del genero que mas le gusta, debes revisar del siguiente genero en su lista. Asume que siempre va a haber al menos una pelicula que le guste al cliente. Como queremos maximizar las ganancias, si hay mas de una pelicula en el genero preferido, primero debes arrendar la mas cara. Cuando arriendes una pelicula, debes eliminarla del stock, añadir su precio al profit, aumentar el numero de peliculas arrendadas, e imprimir "{nombre_cliente} arrienda {nombre_pelicula} por {precio}". Al finalizar la transacción, aumenta el numero de clientes atendidos e imprime "{nombre_cliente} arrendó {numero_peliculas} pelicula(s), gastando {precio_total}"
+`generar_venta(cliente)`, toma como parametro un objeto Cliente. Debes buscar peliculas para el cliente de tu stock que cumpla sus preferencias hasta satisfacer su demanda. En caso de que no tengas ninguna del genero que mas le gusta, debes revisar del siguiente genero en su lista. Asume que siempre va a haber al menos una pelicula que le guste al cliente. Como queremos maximizar las ganancias, si hay mas de una pelicula en el genero preferido, primero debes arrendar la mas cara. Cuando arriendes una pelicula, debes eliminarla del stock, añadir su precio al profit, aumentar el numero de peliculas arrendadas, e imprimir `"{nombre_cliente} arrienda {nombre_pelicula} por {precio}"`. Al finalizar la transacción, aumenta el numero de clientes atendidos e imprime `"{nombre_cliente} arrendó {numero_peliculas} pelicula(s), gastando {precio_total}"`
 
-`trabajar(clientes)`, toma como parametro una lista de objetos Cliente. Debe simular un dia completo de trabajo, primero imprimiendo "---Se abre el Blockbuster {nombre}---"; luego recibiendo a todos los clientes de la lista, y atendiendolos en orden hasta que todos hayan sido atendidos. Para finalizar el día, debes imprimir "---Cerrando la caja---", y despues "Se atendieron {n_clientes} clientes, se arrendaron {n_peliculas} peliculas, y ganamos ${profit}", finalmente "---Se cierra el Blockbuster {nombre}---"
+`trabajar(clientes)`, toma como parametro una lista de objetos Cliente. Debe simular un dia completo de trabajo, primero imprimiendo `"---Se abre el Blockbuster {nombre}---"`; luego recibiendo a todos los clientes de la lista, y atendiendolos en orden hasta que todos hayan sido atendidos. Para finalizar el día, debes imprimir `"---Cerrando la caja---"`, y despues `"Se atendieron {n_clientes} clientes, se arrendaron {n_peliculas} peliculas, y ganamos ${profit}"`, finalmente debes imprimir `"---Se cierra el Blockbuster {nombre}---"`
 
 ## Ejemplo
 
